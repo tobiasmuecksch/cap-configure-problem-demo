@@ -11,7 +11,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "webdriver-manager update --standalone false --gecko false"
+    "postinstall": "webdriver-manager update --standalone false --gecko false",
+    "init": "(mkdir www || true) && npm i && (rm -r ios || true) && (rm -r android || true) && ionic cap copy  && ionic cap add ios && ionic cap add android && npx @capacitor/configure run platform-config.yml"
   },
   "repository": {
     "type": "git",
