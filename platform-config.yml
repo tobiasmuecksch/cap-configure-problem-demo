@@ -13,7 +13,6 @@ platforms:
         bundleId: $BUNDLE_ID_IOS
         version: 2.2.2
         buildNumber: 2.2.2
-        incrementBuild: true
         productName: >-
           "$(TARGET_NAME)"
         displayName: $APP_NAME
