@@ -2,7 +2,7 @@ vars:
   BUNDLE_ID_IOS:
     default: com.cap-configure.demo-ios
   PACKAGE_NAME_ANDROID:
-    default: com.cap-configure.demo-android
+    default: com.capconfigure.demoandroid
   APP_NAME:
     default: Cap Demo App
 
