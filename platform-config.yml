@@ -1,0 +1,52 @@
+vars:
+  BUNDLE_ID_IOS:
+    default: com.cap-configure.demo-ios
+  PACKAGE_NAME_ANDROID:
+    default: com.cap-configure.demo-android
+  APP_NAME:
+    default: Cap Demo App
+
+platforms:
+  ios:
+    targets:
+      App:
+        bundleId: $BUNDLE_ID_IOS
+        version: 2.2.2
+        buildNumber: 2.2.2
+        incrementBuild: true
+        productName: >-
+          "$(TARGET_NAME)"
+        displayName: $APP_NAME
+    infoPlist:
+      - CFBundleDevelopmentRegion: de_DE
+      - NSCameraUsageDescription: Hochladen von Bildern für Chat und Profil.
+      - NSPhotoLibraryAddUsageDescription: Speichern von Bildern aus dem Chat-Verlauf.
+      - NSPhotoLibraryUsageDescription: Hochladen von Bildern für Chat und Profil.
+      - ITSAppUsesNonExemptEncryption: false
+    entitlements:
+      - aps-environment: development
+      - com.apple.developer.icloud-container-identifiers
+        [
+        'iCloud.$(PRODUCT_BUNDLE_IDENTIFIER)'
+        ]
+      - com.apple.developer.icloud-services
+        [
+        'CloudDocuments',
+        'CloudKit'
+        ]
+      - com.apple.developer.ubiquity-container-identifiers
+        [
+        'iCloud.$(PRODUCT_BUNDLE_IDENTIFIER)'
+        ]
+      - com.apple.developer.ubiquity-kvstore-identifier: $(TeamIdentifierPrefix)$(CFBundleIdentifier)
+
+  android:
+    packageName: $PACKAGE_NAME_ANDROID
+    versionName: 2.2.2
+    versionCode: 222
+
+    manifest:
+      - file: AndroidManifest.xml
+        target: manifest/application
+        attrs:
+          android:name: com.cap-configure.demo-android.MainActivity
