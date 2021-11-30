@@ -16,28 +16,25 @@ platforms:
         productName: >-
           "$(TARGET_NAME)"
         displayName: $APP_NAME
-    infoPlist:
-      - CFBundleDevelopmentRegion: de_DE
-      - NSCameraUsageDescription: Hochladen von Bildern für Chat und Profil.
-      - NSPhotoLibraryAddUsageDescription: Speichern von Bildern aus dem Chat-Verlauf.
-      - NSPhotoLibraryUsageDescription: Hochladen von Bildern für Chat und Profil.
-      - ITSAppUsesNonExemptEncryption: false
-    entitlements:
-      - aps-environment: development
-      - com.apple.developer.icloud-container-identifiers
-        [
-        'iCloud.$(PRODUCT_BUNDLE_IDENTIFIER)'
-        ]
-      - com.apple.developer.icloud-services
-        [
-        'CloudDocuments',
-        'CloudKit'
-        ]
-      - com.apple.developer.ubiquity-container-identifiers
-        [
-        'iCloud.$(PRODUCT_BUNDLE_IDENTIFIER)'
-        ]
-      - com.apple.developer.ubiquity-kvstore-identifier: $(TeamIdentifierPrefix)$(CFBundleIdentifier)
+        infoPlist:
+          - CFBundleDevelopmentRegion: de_DE
+          - NSCameraUsageDescription: Hochladen von Bildern für Chat und Profil.
+          - NSPhotoLibraryAddUsageDescription: Speichern von Bildern aus dem Chat-Verlauf.
+          - NSPhotoLibraryUsageDescription: Hochladen von Bildern für Chat und Profil.
+          - ITSAppUsesNonExemptEncryption: false
+
+        entitlements:
+          - aps-environment:
+              - development
+          - com.apple.developer.icloud-container-identifiers:
+              - "iCloud.$(PRODUCT_BUNDLE_IDENTIFIER)"
+          - com.apple.developer.icloud-services:
+              - "CloudDocuments"
+              - "CloudKit"
+          - com.apple.developer.ubiquity-container-identifiers:
+              - "iCloud.$(PRODUCT_BUNDLE_IDENTIFIER)"
+          - com.apple.developer.ubiquity-kvstore-identifier:
+              - $(TeamIdentifierPrefix)$(CFBundleIdentifier)
 
   android:
     packageName: $PACKAGE_NAME_ANDROID
